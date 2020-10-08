@@ -15,6 +15,8 @@ public class Zoo {
     }
 
     public <T extends Cage> void addCage(T cage) {
+        if (cage == null)
+            throw new IllegalArgumentException();
         cages.add(cage);
     }
 
