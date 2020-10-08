@@ -40,9 +40,9 @@ class CageTest {
 
     @Test
     void testAddWithOverflowElement() {
-        assertThrows(IllegalStateException.class, () -> lionCage.add(new Lion("Leo", 12)));
-        assertThrows(IllegalStateException.class, () -> birdCage.add(new Eagle("Kir", 15)));
-        assertThrows(IllegalStateException.class, () -> ungulateCage.add(new Zebra("Martin", 10)));
+        assertThrows(IllegalArgumentException.class, () -> lionCage.add(new Lion("Leo", 12)));
+        assertThrows(IllegalArgumentException.class, () -> birdCage.add(new Eagle("Kir", 15)));
+        assertThrows(IllegalArgumentException.class, () -> ungulateCage.add(new Zebra("Martin", 10)));
     }
 
     @Test
@@ -54,8 +54,8 @@ class CageTest {
 
     @Test
     void testRemoveWithNotContainingElement() {
-        assertThrows(IllegalStateException.class, () -> lionCage.remove(new Lion("LLeo", 12)));
-        assertThrows(IllegalStateException.class, () -> birdCage.remove(new Eagle("KKir", 15)));
-        assertThrows(IllegalStateException.class, () -> ungulateCage.remove(new Zebra("MMartin", 10)));
+        assertThrows(IllegalArgumentException.class, () -> lionCage.remove(new Lion("LLeo", 12)));
+        assertThrows(IllegalArgumentException.class, () -> birdCage.remove(new Eagle("KKir", 15)));
+        assertThrows(IllegalArgumentException.class, () -> ungulateCage.remove(new Zebra("MMartin", 10)));
     }
 }

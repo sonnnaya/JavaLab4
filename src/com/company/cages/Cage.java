@@ -23,15 +23,15 @@ public abstract class Cage<T extends Animal> {
 
     public void add(T animal) throws IllegalStateException {
         if (getTakenCapacity() == getCapacity())
-            throw new IllegalStateException("The cage is full.");
+            throw new IllegalArgumentException("The cage is full.");
         else
             collection.add(animal);
     }
 
     public void remove(T animal) throws IllegalStateException {
         if (collection.isEmpty())
-            throw new IllegalStateException("Cage is empty.");
+            throw new IllegalArgumentException("Cage is empty.");
         else if (!collection.remove(animal))
-            throw new IllegalStateException("Cage doesn't store such instance.");
+            throw new IllegalArgumentException("Cage doesn't store such instance.");
     }
 }

@@ -9,7 +9,7 @@ public class Zoo {
 
     public int getCountOfAnimals() {
         int count = 0;
-        for (Cage cage : cages)
+        for (var cage : cages)
             count += cage.getTakenCapacity();
         return count;
     }

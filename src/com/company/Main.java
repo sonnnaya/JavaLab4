@@ -40,8 +40,7 @@ public class Main {
             zoo.<LionCage>addCage(lionCage);
             zoo.<BirdCage>addCage(eagleBirdCage);
             System.out.println(zoo.getCountOfAnimals());
-        } catch (IllegalStateException e) {
-            e.printStackTrace();
+
         } catch (IllegalArgumentException e) {
             e.printStackTrace();
         }
